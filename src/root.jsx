@@ -2,7 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
+import Publish     from './components/publish';
+import MessageList from './components/messageList';
+
+class Container extends React.Component {
+  render() {
+    return (
+      <div id="container">
+        <div id="content">
+          <Publish />
+          <MessageList />
+        </div>
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <Container />,
   document.getElementById('root')
 );
