@@ -1,0 +1,38 @@
+{
+  "name": "messages-wall-react",
+  "version": "0.0.1",
+  "description": "A React client for the messages-wall-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhenriquez/messages-wall-react.git"
+  },
+  "keywords": [
+    "React",
+    "Client",
+    "Web"
+  ],
+  "author": "Julio Henriquez <julio.m.henriquez@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhenriquez/messages-wall-react/issues"
+  },
+  "homepage": "https://github.com/jhenriquez/messages-wall-react#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "dotenv": "^4.0.0",
+    "messages-wall-api": "git+https://github.com/jhenriquez/messages-wall-api.git",
+    "webpack": "^2.5.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
