@@ -6,7 +6,8 @@ const configuration = {
       vendors: [
         'react',
 	      'react-dom',
-        'prop-types'
+        'prop-types',
+        'popsicle'
       ]
    },
 
