@@ -15,14 +15,12 @@ class Container extends React.Component {
     this.userService = new UserService();
 
     this.state = {
-      auth: {
-        isLoading: true,
-        user: null
+      status: {
+        auth: 'loading',
+        messages: 'loading'
       },
-      messages: {
-        isLoading: true,
-        list: []
-      }
+      user: null,
+      messages: []
     };
   }
 
@@ -30,8 +28,8 @@ class Container extends React.Component {
     return (
       <div id="container">
         <div id="content">
-          <Publish auth={ this.state.auth } />
-          <MessageList messages={ this.state.messages } />
+          <Publish status={ this.state.status.auth } user={ this.state.user } />
+          <MessageList status={ this.state.status.messages } messages={ this.state.messages } />
         </div>
       </div>
     );
