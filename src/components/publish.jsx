@@ -11,7 +11,11 @@ export default class Publish extends React.Component {
       </div>
     );
 
-    return this.props.user ? null : whenAnonymous;
+    return (
+      <div className="publish-content">
+        { this.props.user ? null : whenAnonymous }
+      </div>
+    );
   }
 
 };
