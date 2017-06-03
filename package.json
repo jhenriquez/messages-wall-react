@@ -4,7 +4,9 @@
   "description": "A React client for the messages-wall-api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack --display-error-details",
+    "build:watch": "./node_modules/.bin/webpack -w"
   },
   "jest": {
     "verbose": true
