@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/webpack --display-error-details",
-    "build:watch": "./node_modules/.bin/webpack -w"
+    "build": "webpack --display-error-details",
+    "build:watch": "webpack -w"
   },
   "jest": {
     "verbose": true
@@ -28,12 +28,15 @@
   "homepage": "https://github.com/jhenriquez/messages-wall-react#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "dotenv": "^4.0.0",
     "enzyme": "^2.8.2",
+    "eslint": "^4.0.0",
+    "flow-bin": "^0.47.0",
     "jest": "^20.0.4",
     "messages-wall-api": "git+https://github.com/jhenriquez/messages-wall-api.git",
     "react-test-renderer": "^15.5.4",
