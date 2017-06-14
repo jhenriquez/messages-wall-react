@@ -1,11 +1,11 @@
 import * as popsicle from 'popsicle';
 
 export default class HttpService {
-  get(url) {
+  get(url: string) {
     return popsicle.get(url);
   }
 
-  post(url, data) {
+  post(url: string, data: any) {
     return popsicle.post(url, data).use(popsicle.plugins.parse('json'));
   }
 }

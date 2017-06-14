@@ -1,0 +1,14 @@
+[ignore]
+.*/public/*
+.*/node_modules/*
+.*\.spec\.js?
+
+[include]
+src/
+
+[libs]
+mocha
+enzyme
+
+[options]
+all=true

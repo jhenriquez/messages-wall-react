@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 
-export default class MessageList extends Component {
+export default class MessageList extends Component<any,any,any> {
 
   render() {
     return (

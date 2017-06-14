@@ -4,9 +4,13 @@ import Loading from '../components/loading';
 import Publish from '../components/publish';
 import MessageList from '../components/messageList';
 
-export default class Application extends React.Component {
+type ApplicationStatus = { user: string, messages: string };
+type ApplicationState = { status: ApplicationStatus, user: any, messages: any[] };
 
-  constructor (props) {
+export default class Application extends React.Component<any, any, ApplicationState> {
+  state: ApplicationState;
+
+  constructor (props: any) {
     super(props);
     this.state = {
       status: {
