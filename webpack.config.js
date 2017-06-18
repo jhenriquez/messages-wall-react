@@ -1,4 +1,5 @@
-const path = require('path');
+const path    = require('path');
+const webpack = require('webpack');
 
 const configuration = {
    entry: {
@@ -7,7 +8,9 @@ const configuration = {
         'react',
 	      'react-dom',
         'prop-types',
-        'popsicle'
+        'popsicle',
+        'react-router',
+        'react-router-dom'
       ]
    },
 
@@ -27,7 +30,14 @@ const configuration = {
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules')]
-  }
+  },
+
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendors',
+      filename: 'vendors.min.js',
+    })
+  ]
 };
 
 module.exports = configuration;
