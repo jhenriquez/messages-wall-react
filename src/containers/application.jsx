@@ -7,7 +7,7 @@ import MessageList from '../components/messageList';
 type ApplicationStatus = { user: string, messages: string };
 type ApplicationState = { status: ApplicationStatus, user: any, messages: any[] };
 
-export default class Application extends React.Component<any, any, ApplicationState> {
+export default class Application extends React.Component<void, void, ApplicationState> {
   state: ApplicationState;
 
   constructor (props: any) {
