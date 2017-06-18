@@ -1,18 +1,22 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
+export type PublishPropType = { user: any };
+
 export class AnonymousPublisher extends React.Component {
   render() {
     return (
         <div className="anonymous-content">
           <p className="message">
-            You need to either <a>signup</a> or <a>signin</a> before you can post any content.
+            You need to either <Link to="/signup">signup</Link> or <Link to="/signin">signin</Link> before you can post any content.
           </p>
         </div>
     );
   }
 }
 
-export default class Publish extends React.Component {
+export default class Publish extends React.Component<void, PublishPropType, void> {
 
   render() {
 
