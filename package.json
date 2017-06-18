@@ -41,7 +41,6 @@
     "jest": "^20.0.4",
     "messages-wall-api": "git+https://github.com/jhenriquez/messages-wall-api.git",
     "nodemon": "^1.11.0",
-    "react-router": "^4.1.1",
     "react-test-renderer": "^15.5.4",
     "webpack": "^2.5.1"
   },
@@ -49,6 +48,8 @@
     "popsicle": "^9.1.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
   }
 }
