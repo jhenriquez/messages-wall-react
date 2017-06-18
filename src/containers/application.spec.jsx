@@ -7,6 +7,17 @@ import MessageList from '../components/messageList';
 
 import Application from './application';
 
+/**
+ * The publish component renders <Link /> routing helpers. Have we not mock it, we would need to test the application component
+ * together with routing functionality, when in this case we only care about testing that the application renders the appropriate
+ * component.
+ */
+jest.mock('../components/publish', () => {
+  return function Publish () {
+    return (<div></div>);
+  };
+});
+
 describe('<Application />', () => {
 
   let component = null;
@@ -34,6 +45,9 @@ describe('<Application />', () => {
   });
 
   describe('<Publish />', () => {
+
+    afterAll(() => { jest.unmock('../components/publish'); });
+
     test('It should render <Publish /> any time the user status state is not "loading"', () => {
       expect(component.find(Publish)).toHaveLength(0);
 
