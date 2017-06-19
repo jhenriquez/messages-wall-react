@@ -1,5 +1,8 @@
 {
-    "extends": "plugin:react/recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
     "parser": "babel-eslint",
     "parserOptions": {
         "sourceType": "module",
@@ -22,6 +25,13 @@
         "no-unreachable": "warn",
         "no-unused-vars": "warn",
         "constructor-super": "warn",
-        "valid-typeof": "warn"
+        "valid-typeof": "warn",
+        "no-extra-semi":"warn",
+        "semi": "warn",
+        "strict":"warn",
+        "curly":"warn",
+        "eqeqeq": "warn",
+        "no-empty-function":"warn",
+        "no-empty-pattern":"warn"
     }
 }
