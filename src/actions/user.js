@@ -4,7 +4,6 @@ export const GET_CURRENT_USER = '[User] Get Current User';
 export const GET_CURRENT_USER_SUCCESS = '[User] Get Current User Request Succeeded';
 export const GET_CURRENT_USER_FAIL = '[User] Get Current User Request Failed';
 
-
 /**
  * Enforces created actions comply with the flux standard
  */
