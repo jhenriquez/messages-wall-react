@@ -4,7 +4,7 @@ import Loading from '../components/loading';
 import Publish from '../components/publish';
 import MessageList from '../components/messageList';
 
-type ApplicationStatus = { user: string, messages: string };
+type ApplicationStatus = { isUserLoading: boolean, isMessagesLoading: boolean };
 type ApplicationState = { status: ApplicationStatus, user: any, messages: any[] };
 
 export default class Application extends React.Component<void, void, ApplicationState> {
@@ -14,8 +14,8 @@ export default class Application extends React.Component<void, void, Application
     super(props);
     this.state = {
       status: {
-        user: 'loading',
-        messages: 'loading'
+        isUserLoading: true,
+        isMessagesLoading: true
       },
       user: null,
       messages: []
@@ -25,8 +25,8 @@ export default class Application extends React.Component<void, void, Application
   render() {
     return (
       <div>
-        { this.state.status.user === 'loading' ? <Loading /> : <Publish user={ this.state.user } /> }
-        { this.state.status.messages === 'loading' ? <Loading /> : <MessageList messages={ this.state.messages } /> }
+        { this.state.status.isUserLoading ? <Loading /> : <Publish user={ this.state.user } /> }
+        { this.state.status.isMessagesLoading ? <Loading /> : <MessageList messages={ this.state.messages } /> }
       </div>
     );
   }

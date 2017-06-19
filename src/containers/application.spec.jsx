@@ -26,11 +26,11 @@ describe('<Application />', () => {
 
   describe('Initial State', () => {
 
-    test('Inital state should be { status: { user: "loading", messages: "loading"  }, user: null, messages: [] }', () => {
+    test('Inital state should be { status: { isUserLoading: true, isMessagesLoading: true  }, user: null, messages: [] }', () => {
       expect(component.state()).toEqual({
         status: {
-          user: 'loading',
-          messages: 'loading'
+          isUserLoading: true,
+          isMessagesLoading: true
         },
         user: null,
         messages: []
@@ -53,7 +53,7 @@ describe('<Application />', () => {
 
       component.setState(
         Object.assign({}, component.state(), {
-          status: Object.assign({}, component.state('status'), { user: 'fail' })
+          status: Object.assign({}, component.state('status'), { isUserLoading: false })
         })
       );
 
@@ -65,7 +65,7 @@ describe('<Application />', () => {
 
       component.setState(
         Object.assign({}, component.state(), {
-          status: Object.assign({}, component.state('status'), { user: 'success' }),
+          status: Object.assign({}, component.state('status'), { isUserLoading: false }),
           user: user
         })
       );
@@ -80,7 +80,7 @@ describe('<Application />', () => {
 
       component.setState(
         Object.assign({}, component.state(), {
-          status: Object.assign({}, component.state('status'), { messages: 'fail' })
+          status: Object.assign({}, component.state('status'), { isMessagesLoading: false })
         })
       );
 
@@ -90,7 +90,7 @@ describe('<Application />', () => {
     test('It should pass along the "messages" prop with the value held in the state', () => {
       component.setState(
         Object.assign({}, component.state(), {
-          status: Object.assign({}, component.state('status'), { messages: 'success' }),
+          status: Object.assign({}, component.state('status'), { isMessagesLoading: false }),
           messages: [1,2,3,4]
         })
       );
