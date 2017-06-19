@@ -6,7 +6,7 @@ const configuration = {
       main: './src/root.jsx',
       vendors: [
         'react',
-	      'react-dom',
+        'react-dom',
         'prop-types',
         'popsicle',
         'react-router',
@@ -33,10 +33,7 @@ const configuration = {
   },
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors',
-      filename: 'vendors.min.js',
-    })
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendors' })
   ]
 };
 
