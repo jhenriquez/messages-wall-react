@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 
-type PropType = { messages: any[], empty?: string };
+type MessageListPropType = { messages: any[], empty?: string };
 type DefaultPropType = { messages: any[] };
 
-export default class MessageList extends Component<DefaultPropType, PropType, void> {
+export default class MessageList extends Component<DefaultPropType, MessageListPropType, void> {
   static defaultProps: DefaultPropType;
 
   render() {

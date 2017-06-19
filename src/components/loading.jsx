@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-export default class Loading extends React.Component {
+type LoadingPropType = { message?: string };
+
+export default class Loading extends Component<void, LoadingPropType, void> {
   render() {
     return (
       <div className="loading-container">

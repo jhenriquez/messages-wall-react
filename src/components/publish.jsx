@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Link } from 'react-router-dom';
 
 export type PublishPropType = { user: any };
 
-export class AnonymousPublisher extends React.Component {
+export class AnonymousPublisher extends Component {
   render() {
     return (
         <div className="anonymous-content">
