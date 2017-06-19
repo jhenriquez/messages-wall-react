@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-
 import { Link } from 'react-router-dom';
 
-export type PublishPropType = { user: any };
+import { IUser } from '../models/user';
+
+export interface IPublishPropType {
+  user: IUser;
+}
 
 export class AnonymousPublisher extends Component {
   render() {
@@ -16,7 +19,7 @@ export class AnonymousPublisher extends Component {
   }
 }
 
-export default class Publish extends React.Component<void, PublishPropType, void> {
+export default class Publish extends React.Component<void, IPublishPropType, void> {
 
   render() {
     return (
