@@ -9,7 +9,7 @@ export const GET_CURRENT_USER_FAIL = '[User] Get Current User Request Failed';
  */
 interface IAction {
   type: string;
-  payload?: any;
+  payload: any;
 }
 
 /**
