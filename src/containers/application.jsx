@@ -4,10 +4,10 @@ import Loading from '../components/loading';
 import Publish from '../components/publish';
 import MessageList from '../components/messageList';
 
-import type { ApplicationState } from '../reducers';
+import type { State } from '../reducers';
 
-export default class Application extends React.Component<void, void, ApplicationState> {
-  state: ApplicationState;
+export default class Application extends React.Component<void, void, State> {
+  state: State;
 
   constructor (props: any) {
     super(props);

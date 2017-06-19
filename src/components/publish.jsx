@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { IUser } from '../models/user';
 
 export interface IPublishPropType {
-  user: IUser;
+  user: null | IUser;
 }
 
 export class AnonymousPublisher extends Component {

@@ -7,10 +7,18 @@ import { combineReducers } from 'redux';
 
 import * as statusReducer from './status';
 
+import { IUser } from '../models/user';
+
 const reducer = combineReducers({ status: statusReducer });
 
-type ApplicationStatus = { isUserLoading: boolean, isMessagesLoading: boolean };
+type ApplicationStatus = {
+  isUserLoading: boolean,
+  isMessagesLoading: boolean
+};
 
-export type ApplicationState = { status: ApplicationStatus };
+export type State = {
+  status: ApplicationStatus,
+  user: null | IUser
+};
 
 export default reducer;

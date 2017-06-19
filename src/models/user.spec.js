@@ -1,12 +1,12 @@
 import User, { IUser } from './user';
 
-describe ('User Model',  () => {
+export const mockUser = {
+  name: 'Test User',
+  email: 'test@test.com',
+  emailHash: 'b642b4217b34b1e8d3bd915fc65c4452'
+};
 
-  let mockUser: any = {
-    name: 'Test User',
-    email: 'test@test.com',
-    emailHash: 'b642b4217b34b1e8d3bd915fc65c4452'
-  };
+describe ('User Model',  () => {
 
   describe('#()', () => {
 
