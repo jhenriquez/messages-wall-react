@@ -19,7 +19,6 @@ export class AnonymousPublisher extends Component {
 export default class Publish extends React.Component<void, PublishPropType, void> {
 
   render() {
-
     return (
       <div className="publish-content">
         { this.props.user ? null : <AnonymousPublisher /> }
@@ -27,4 +26,4 @@ export default class Publish extends React.Component<void, PublishPropType, void
     );
   }
 
-};
+}

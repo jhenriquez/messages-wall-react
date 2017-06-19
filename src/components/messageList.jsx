@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 
-type MessageListPropType = { messages: any[], empty?: string };
-type DefaultPropType = { messages: any[] };
+interface IDefaultPropType {
+  messages: any[];
+}
 
-export default class MessageList extends Component<DefaultPropType, MessageListPropType, void> {
-  static defaultProps: DefaultPropType;
+export interface IMessageListPropType {
+  messages: any[];
+  empty?: string;
+}
+
+export default class MessageList extends Component<IDefaultPropType, IMessageListPropType, void> {
+  static defaultProps: IDefaultPropType;
 
   render() {
     return (
@@ -16,7 +22,7 @@ export default class MessageList extends Component<DefaultPropType, MessageListP
     );
   }
 
-};
+}
 
 MessageList.propTypes = {
   messages: PropTypes.array.isRequired,

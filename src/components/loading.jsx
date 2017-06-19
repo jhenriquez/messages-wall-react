@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-type LoadingPropType = { message?: string };
+export interface ILoadingPropType {
+  message?: string;
+}
 
-export default class Loading extends Component<void, LoadingPropType, void> {
+export default class Loading extends Component<void, ILoadingPropType, void> {
   render() {
     return (
       <div className="loading-container">
@@ -13,4 +16,8 @@ export default class Loading extends Component<void, LoadingPropType, void> {
       </div>
     );
   }
+}
+
+Loading.propTypes = {
+  message: PropTypes.string
 };
