@@ -4,8 +4,7 @@ import Loading from '../components/loading';
 import Publish from '../components/publish';
 import MessageList from '../components/messageList';
 
-type ApplicationStatus = { isUserLoading: boolean, isMessagesLoading: boolean };
-type ApplicationState = { status: ApplicationStatus, user: any, messages: any[] };
+import type { ApplicationState } from '../reducers';
 
 export default class Application extends React.Component<void, void, ApplicationState> {
   state: ApplicationState;
