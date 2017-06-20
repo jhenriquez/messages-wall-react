@@ -5,6 +5,10 @@ import { GetMessagesActionSuccess, GetMessagesActionFail } from '../actions/mess
 
 describe('Reducer: messages', () => {
 
+  test('resolves to intial state when passed undefind', () => {
+    const nextState = reducer(undefined, 'Some unknown action');
+    expect(nextState).toEqual([]);
+  });
 
   describe('GET_MESSAGES_SUCCESS', () => {
 

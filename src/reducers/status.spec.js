@@ -6,6 +6,11 @@ import { mockUser } from '../models/user.spec';
 
 describe ('Reducer: status', () => {
 
+  test('It resolves to its initial state when passed undefined', () => {
+    const nextState = reducer(undefined, 'Some unknown action');
+    expect(nextState).toEqual({ isMessagesLoading: true, isUserLoading: true });
+  });
+
   describe('GET_CURRENT_USER', () => {
 
     test('It should set isUserLoading attribute to true', () => {
