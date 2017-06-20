@@ -3,7 +3,7 @@ import type { Action } from '../actions/user';
 import { GET_CURRENT_USER_SUCCESS, GET_CURRENT_USER_FAIL } from '../actions/user';
 import { IUser } from '../models/user';
 
-function reducer (state: IUser, action: Action) {
+function reducer (state: IUser, action: Action) : null | IUser {
 
   switch (action.type) {
 

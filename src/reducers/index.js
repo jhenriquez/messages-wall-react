@@ -5,18 +5,14 @@
 
 import { combineReducers } from 'redux';
 
-import * as fromStatus from './status';
-import * as fromMessage from './message';
+import * as status from './status';
+import * as messages from './message';
+import * as user from './user';
 
 import { IUser } from '../models/user';
 import { IMessage } from '../models/message';
 
-const reducersMap = {
-  status: fromStatus,
-  messages: fromMessage
-};
-
-const reducer = combineReducers(reducersMap);
+const reducer = combineReducers({ status, messages, user });
 
 type ApplicationStatus = {
   isUserLoading: boolean,

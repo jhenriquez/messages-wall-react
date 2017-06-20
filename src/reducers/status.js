@@ -12,7 +12,7 @@ export type ApplicationStatus = {
   isMessagesLoading: boolean
 };
 
-export default function reducer (state: ApplicationStatus, action: UserAction | MessageAction) {
+export default function reducer (state: ApplicationStatus, action: UserAction | MessageAction) : ApplicationStatus {
   switch (action.type) {
     case GET_CURRENT_USER:
       return Object.assign({}, state, { isUserLoading: true });
