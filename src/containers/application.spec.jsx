@@ -32,7 +32,11 @@ describe('<Application />', () => {
           isUserLoading: true,
           isMessagesLoading: true
         },
-        messages: []
+        messages: [],
+        session: {
+          isAnonymous: true,
+          user: null
+        }
       });
     });
 
@@ -65,7 +69,10 @@ describe('<Application />', () => {
       component.setState(
         Object.assign({}, component.state(), {
           status: Object.assign({}, component.state('status'), { isUserLoading: false }),
-          user: user
+          session: {
+            isAnonymous: false,
+            user: user
+          }
         })
       );
 

@@ -16,14 +16,18 @@ export default class Application extends React.Component<void, void, State> {
         isUserLoading: true,
         isMessagesLoading: true
       },
-      messages: []
+      messages: [],
+      session: {
+        isAnonymous: true,
+        user: null
+      }
     };
   }
 
   render() {
     return (
       <div>
-        { this.state.status.isUserLoading ? <Loading /> : <Publish user={ this.state.user } /> }
+        { this.state.status.isUserLoading ? <Loading /> : <Publish user={ this.state.session.user } /> }
         { this.state.status.isMessagesLoading ? <Loading /> : <MessageList messages={ this.state.messages } /> }
       </div>
     );
