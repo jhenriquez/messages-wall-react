@@ -26,13 +26,12 @@ describe('<Application />', () => {
 
   describe('Initial State', () => {
 
-    test('Inital state should be { status: { isUserLoading: true, isMessagesLoading: true  }, user: null, messages: [] }', () => {
+    test('Inital state should be { status: { isUserLoading: true, isMessagesLoading: true  }, messages: [] }', () => {
       expect(component.state()).toEqual({
         status: {
           isUserLoading: true,
           isMessagesLoading: true
         },
-        user: null,
         messages: []
       });
     });

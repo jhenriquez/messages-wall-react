@@ -16,7 +16,6 @@ export default class Application extends React.Component<void, void, State> {
         isUserLoading: true,
         isMessagesLoading: true
       },
-      user: null,
       messages: []
     };
   }

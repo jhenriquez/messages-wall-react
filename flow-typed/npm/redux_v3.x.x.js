@@ -27,7 +27,7 @@ declare module 'redux' {
 
   declare type Reducer<S, A> = (state: S, action: A) => S;
 
-  declare type CombinedReducer<S, A> = (state: $Shape<S> & {} | void, action: A) => S;
+  declare type CombinedReducer<S, A> = (state: $Shape<S> | {} | void, action: A) => S;
 
   declare type Middleware<S, A> =
     (api: MiddlewareAPI<S, A>) =>
@@ -51,7 +51,7 @@ declare module 'redux' {
   declare function bindActionCreators<A, C: ActionCreator<A, any>>(actionCreator: C, dispatch: Dispatch<A>): C;
   declare function bindActionCreators<A, K, C: ActionCreators<K, A>>(actionCreators: C, dispatch: Dispatch<A>): C;
 
-  declare function combineReducers<O: Object, A>(reducers: O): any;
+  declare function combineReducers<O: Object, A>(reducers: O): CombinedReducer<$ObjMap<O, <S>(r: Reducer<S, any>) => S>, A>;
 
   declare function compose<A, B>(ab: (a: A) => B): (a: A) => B
   declare function compose<A, B, C>(

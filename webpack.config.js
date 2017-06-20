@@ -2,6 +2,7 @@ const path    = require('path');
 const webpack = require('webpack');
 
 const configuration = {
+   devtool: 'source-map',
    entry: {
       main: './src/root.jsx',
       vendors: [

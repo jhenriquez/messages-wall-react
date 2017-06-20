@@ -1,4 +1,4 @@
-import reducer from './status';
+import { reducer } from './status';
 import { GetCurrentUserAction, GetCurrentUserActionFail, GetCurrentUserActionSuccess } from '../actions/user';
 import { GetMessagesAction, GetMessagesActionFail, GetMessagesActionSuccess } from '../actions/message';
 

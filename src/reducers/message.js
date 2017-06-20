@@ -3,7 +3,7 @@ import type { Action } from '../actions/message';
 
 import { GET_MESSAGES_FAIL, GET_MESSAGES_SUCCESS } from '../actions/message';
 
-function reducer (state: IMessage[], action: Action): IMessage[] {
+export function reducer (state: IMessage[] = [], action: Action): IMessage[] {
   switch (action.type) {
 
     case GET_MESSAGES_SUCCESS:
@@ -16,5 +16,3 @@ function reducer (state: IMessage[], action: Action): IMessage[] {
       return state;
   }
 }
-
-export default reducer;

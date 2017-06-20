@@ -8,13 +8,6 @@ import Application from './containers/application';
 
 import reducer from './reducers';
 
-import type { State } from './reducers';
-
-import type { Action as UserAction } from './actions/user';
-import type { Action as MessageAction } from './actions/message';
-
-type Action = UserAction | MessageAction;
-
 const store = createStore(reducer);
 
 const Routes = () => (

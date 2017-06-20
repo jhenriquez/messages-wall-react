@@ -1,4 +1,4 @@
-import reducer from './message';
+import { reducer } from './message';
 import mockMessage from '../models/message.spec';
 
 import { GetMessagesActionSuccess, GetMessagesActionFail } from '../actions/message';
