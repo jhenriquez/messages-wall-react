@@ -1,8 +1,13 @@
-import React             from 'react';
-import ReactDOM          from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
+import 'babel-polyfill';
+
+import React        from 'react';
+import ReactDOM     from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import { reduxSaga, configureStore } from './store';
+
+import UserSagas from './sagas/user';
 
 import Application from './containers/application';
 
@@ -20,7 +25,9 @@ const initialState = {
   }
 };
 
-const store = createStore(reducer, initialState);
+const store = configureStore(reducer, initialState);
+
+reduxSaga.run(UserSagas);
 
 const Routes = () => (
   <Provider store={ store }>
