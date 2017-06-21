@@ -18,5 +18,8 @@
         "jest": true
     },
     "plugins": ["react"],
-    "rules": { }
+    "rules": { },
+    "globals": {
+        "Generator": true
+    }
 }

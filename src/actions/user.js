@@ -37,9 +37,9 @@ export class GetCurrentUserActionSuccess {
 export class GetCurrentUserActionFail {
   type: string;
   payload: any;
-  constructor () {
+  constructor (error: any) {
     this.type = GET_CURRENT_USER_FAIL;
-    this.payload = null;
+    this.payload = error;
   }
 }
 
