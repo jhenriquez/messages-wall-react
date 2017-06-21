@@ -33,7 +33,7 @@ describe('<Application />', () => {
 
     test('Default props should be { status: { isUserLoading: true, isMessagesLoading: true  }, messages: [], session: { isAnonymous: true, user: null } }', () => {
       const applicationProps = component.props();
-      expect(applicationProps).toEqual(initialState);
+      expect(applicationProps).toEqual(expect.objectContaining(initialState));
     });
 
     test('It should render <Loading /> instead of both <Publish /> and <MessageList /> respectively.', () => {

@@ -11,8 +11,7 @@ export const GET_CURRENT_USER_FAIL = '[User] Get Current User Request Failed';
 export class GetCurrentUserAction {
   type: string;
   payload: any;
-
-  constructor() {
+  constructor () {
     this.type = GET_CURRENT_USER;
     this.payload = null;
   }
