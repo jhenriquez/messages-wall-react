@@ -10,8 +10,13 @@ const configuration = {
         'react-dom',
         'prop-types',
         'popsicle',
+        "popsicle-status",
         'react-router',
-        'react-router-dom'
+        'react-router-dom',
+        'react-redux',
+        'redux-saga',
+        'babel-polyfill',
+        "lodash"
       ]
    },
 
