@@ -32,4 +32,16 @@ export type State = {
   session: SessionState;
 };
 
+export const initialState = {
+  messages: [],
+  status: {
+    isUserLoading: true,
+    isMessagesLoading: true
+  },
+  session: {
+    isAnonymous: true,
+    user: null
+  }
+};
+
 export default reducer;

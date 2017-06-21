@@ -8,7 +8,19 @@ import Application from './containers/application';
 
 import reducer from './reducers';
 
-const store = createStore(reducer);
+const initialState = {
+  status: {
+    isUserLoading: true,
+    isMessagesLoading: true
+  },
+  messages: [],
+  session: {
+    isAnonymous: true,
+    user: null
+  }
+};
+
+const store = createStore(reducer, initialState);
 
 const Routes = () => (
   <Provider store={ store }>

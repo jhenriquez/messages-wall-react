@@ -1,11 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+
 import Loading from '../components/loading';
 import Publish from '../components/publish';
 import MessageList from '../components/messageList';
-
-import Application from './application';
+import { Application } from './application';
+import { initialState } from '../reducers';
 
 /**
  * The publish component renders <Link /> routing helpers. Have we not mock it, we would need to test the application component
@@ -22,22 +23,17 @@ describe('<Application />', () => {
 
   let component = null;
 
-  beforeEach(() => component = mount(<Application />));
+  beforeEach(() => {
+    component = mount(
+      <Application />
+    )
+  });
 
-  describe('Initial State', () => {
+  describe('Default Props', () => {
 
-    test('Inital state should be { status: { isUserLoading: true, isMessagesLoading: true  }, messages: [] }', () => {
-      expect(component.state()).toEqual({
-        status: {
-          isUserLoading: true,
-          isMessagesLoading: true
-        },
-        messages: [],
-        session: {
-          isAnonymous: true,
-          user: null
-        }
-      });
+    test('Default props should be { status: { isUserLoading: true, isMessagesLoading: true  }, messages: [], session: { isAnonymous: true, user: null } }', () => {
+      const applicationProps = component.props();
+      expect(applicationProps).toEqual(initialState);
     });
 
     test('It should render <Loading /> instead of both <Publish /> and <MessageList /> respectively.', () => {
@@ -54,21 +50,21 @@ describe('<Application />', () => {
     test('It should render <Publish /> any time the user status state is not "loading"', () => {
       expect(component.find(Publish)).toHaveLength(0);
 
-      component.setState(
-        Object.assign({}, component.state(), {
-          status: Object.assign({}, component.state('status'), { isUserLoading: false })
+      component.setProps(
+        Object.assign({}, component.props(), {
+          status: Object.assign({}, component.props('status'), { isUserLoading: false })
         })
       );
 
       expect(component.find(Publish)).toHaveLength(1);
     });
 
-    test('It should pass along the "prop" with the value held in the state for it', () => {
+    test('It should pass along the "session" prop from its own', () => {
       const user = { email: 'someEmail@orSomething.com' };
 
-      component.setState(
-        Object.assign({}, component.state(), {
-          status: Object.assign({}, component.state('status'), { isUserLoading: false }),
+      component.setProps(
+        Object.assign({}, component.props(), {
+          status: Object.assign({}, component.props('status'), { isUserLoading: false }),
           session: {
             isAnonymous: false,
             user: user
@@ -84,9 +80,9 @@ describe('<Application />', () => {
     test('It should render <MessageList /> any time the messages status state is not "loading"', () => {
       expect(component.find(MessageList)).toHaveLength(0);
 
-      component.setState(
-        Object.assign({}, component.state(), {
-          status: Object.assign({}, component.state('status'), { isMessagesLoading: false })
+      component.setProps(
+        Object.assign({}, component.props(), {
+          status: Object.assign({}, component.props('status'), { isMessagesLoading: false })
         })
       );
 
@@ -94,9 +90,9 @@ describe('<Application />', () => {
     });
 
     test('It should pass along the "messages" prop with the value held in the state', () => {
-      component.setState(
-        Object.assign({}, component.state(), {
-          status: Object.assign({}, component.state('status'), { isMessagesLoading: false }),
+      component.setProps(
+        Object.assign({}, component.props(), {
+          status: Object.assign({}, component.props('status'), { isMessagesLoading: false }),
           messages: [1,2,3,4]
         })
       );
