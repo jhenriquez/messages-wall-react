@@ -1,5 +1,5 @@
 import HttpService from './httpService';
-import { IUser } from '../models/user';
+import type { IUser } from '../models/user';
 
 export default class UserService extends HttpService {
 

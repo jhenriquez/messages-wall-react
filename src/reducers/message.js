@@ -1,4 +1,4 @@
-import { IMessage } from '../models/message';
+import type { IMessage } from '../models/message';
 import type { Action } from '../actions/message';
 
 import { GET_MESSAGES_FAIL, GET_MESSAGES_SUCCESS } from '../actions/message';

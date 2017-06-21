@@ -6,7 +6,7 @@ import { GET_CURRENT_USER_SUCCESS, GET_CURRENT_USER_FAIL } from '../actions/user
 
 export type State = {
   isAnonymous: boolean;
-  user: null | IUser;
+  user: ?IUser;
 }
 
 export function reducer (state: State = { isAnonymous: true, user: null }, action: Action) : State {

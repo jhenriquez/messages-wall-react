@@ -27,7 +27,7 @@ export default class Application extends React.Component<void, void, State> {
   render() {
     return (
       <div>
-        { this.state.status.isUserLoading ? <Loading /> : <Publish user={ this.state.session.user } /> }
+        { this.state.status.isUserLoading ? <Loading /> : <Publish session={ this.state.session } /> }
         { this.state.status.isMessagesLoading ? <Loading /> : <MessageList messages={ this.state.messages } /> }
       </div>
     );

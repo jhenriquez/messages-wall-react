@@ -76,7 +76,7 @@ describe('<Application />', () => {
         })
       );
 
-      expect(component.find(Publish).prop('user')).toEqual(user);
+      expect(component.find(Publish).prop('session')).toEqual({ user: user, isAnonymous: false });
     });
   });
 

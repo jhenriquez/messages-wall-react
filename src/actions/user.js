@@ -1,21 +1,14 @@
-import User, { IUser } from '../models/user';
+import User from '../models/user';
+import type { IUser } from '../models/user';
 
 export const GET_CURRENT_USER = '[User] Get Current User';
 export const GET_CURRENT_USER_SUCCESS = '[User] Get Current User Request Succeeded';
 export const GET_CURRENT_USER_FAIL = '[User] Get Current User Request Failed';
 
 /**
- * Enforces created actions comply with the flux standard
- */
-interface IAction {
-  type: string;
-  payload: any;
-}
-
-/**
  * Triggers a request to retrieve the current user currently signed into the API.
  */
-export class GetCurrentUserAction implements IAction {
+export class GetCurrentUserAction {
   type: string;
   payload: any;
 
@@ -28,7 +21,7 @@ export class GetCurrentUserAction implements IAction {
 /**
  * Triggered when an asynchronous GET_CURRENT_USER operation completes successfully.
  */
-export class GetCurrentUserActionSuccess implements IAction {
+export class GetCurrentUserActionSuccess {
   type: string;
   payload: IUser;
 
@@ -41,7 +34,7 @@ export class GetCurrentUserActionSuccess implements IAction {
 /**
  * Triggered when an asynchronous GET_CURRENT_USER operation resolves to an error.
  */
-export class GetCurrentUserActionFail implements IAction {
+export class GetCurrentUserActionFail {
   type: string;
   payload: any;
   constructor () {

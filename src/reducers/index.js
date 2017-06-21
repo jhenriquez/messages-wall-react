@@ -9,7 +9,7 @@ import * as fromStatus from './status';
 import * as fromMessages from './message';
 import * as fromSession from './session';
 
-import { IMessage } from '../models/message';
+import type { IMessage } from '../models/message';
 
 import type { State as SessionState } from './session';
 

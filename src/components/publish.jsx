@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { IUser } from '../models/user';
+import type { IUser } from '../models/user';
 
-export interface IPublishPropType {
-  user: null | IUser;
+type ISession = {
+  isAnonymous: boolean;
+  user: ?IUser;
+}
+
+type PropType = {
+  session: ISession;
 }
 
 export class AnonymousPublisher extends Component {
@@ -19,14 +24,23 @@ export class AnonymousPublisher extends Component {
   }
 }
 
-export default class Publish extends React.Component<void, IPublishPropType, void> {
+export default class Publish extends React.Component<PropType, PropType, void> {
+
+  static defaultProps: PropType;
 
   render() {
     return (
       <div className="publish-content">
-        { this.props.user ? null : <AnonymousPublisher /> }
+        { this.props.session.isAnonymous ? <AnonymousPublisher /> : null }
       </div>
     );
   }
 
 }
+
+Publish.defaultProps = {
+  session: {
+    isAnonymous: true,
+    user: null
+  }
+};

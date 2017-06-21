@@ -1,12 +1,13 @@
-import User, { IUser } from './user';
+import User from './user';
+import type { IUser } from './user';
 
-export interface IMessage {
+export type IMessage = {
   text: string;
   author: IUser,
   createdAt: Date;
 }
 
-export default class Message implements IMessage {
+export default class Message {
 
   text: string;
   author: IUser;

@@ -1,10 +1,11 @@
-export interface IUser {
+export type IUser = {
   name: string;
   email: string;
   emailHash: string;
 }
 
-export default class User implements IUser {
+export default class User {
+
   name: string;
   email: string;
   emailHash: string;
@@ -14,4 +15,5 @@ export default class User implements IUser {
     this.email = user.email;
     this.emailHash = user.emailHash;
   }
+
 }

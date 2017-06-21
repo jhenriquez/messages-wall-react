@@ -1,12 +1,4 @@
-import { IMessage } from '../models/message';
-
-/**
- * Enforces created actions comply with the flux standard
- */
-interface IAction {
-  type: string;
-  payload: any;
-}
+import type { IMessage } from '../models/message';
 
 export const GET_MESSAGES = '[Messages] Get Messages From The Server';
 export const GET_MESSAGES_SUCCESS = '[Messages] Get Messages Request Succeeded';
@@ -16,7 +8,7 @@ export const GET_MESSAGES_FAIL = '[Messages] Get Messages Request Failed';
 /**
  * Triggers a request to retrieve the messages from the server.
  */
-export class GetMessagesAction implements IAction {
+export class GetMessagesAction {
   type: string;
   payload: any;
 
@@ -29,7 +21,7 @@ export class GetMessagesAction implements IAction {
 /**
  * Triggered when asynchronous GET_MESSAGES operation completes successfully.
  */
-export class GetMessagesActionSuccess implements IAction {
+export class GetMessagesActionSuccess {
   type: string;
   payload: IMessage[];
 
@@ -42,7 +34,7 @@ export class GetMessagesActionSuccess implements IAction {
 /**
  * Triggered when asynchronous GET_MESSAGES operation resolve to an error.
  */
-export class GetMessagesActionFail implements IAction {
+export class GetMessagesActionFail {
   type: string;
   payload: any;
 
